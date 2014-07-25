@@ -140,32 +140,9 @@
 					<label class="control-label col-md-2" for="inpChar">Char</label>
 					<div class="col-md-4">
 						<select name="char" id="inpChar" class="form-control">
-							<option value="a"<%- _.contains(charsUsed, 'a') ? ' disabled' : '' %>>A</option>
-							<option value="b"<%- _.contains(charsUsed, 'b') ? ' disabled' : '' %>>B</option>
-							<option value="c"<%- _.contains(charsUsed, 'c') ? ' disabled' : '' %>>C</option>
-							<option value="d"<%- _.contains(charsUsed, 'd') ? ' disabled' : '' %>>D</option>
-							<option value="e"<%- _.contains(charsUsed, 'e') ? ' disabled' : '' %>>E</option>
-							<option value="f"<%- _.contains(charsUsed, 'f') ? ' disabled' : '' %>>F</option>
-							<option value="g"<%- _.contains(charsUsed, 'g') ? ' disabled' : '' %>>G</option>
-							<option value="h"<%- _.contains(charsUsed, 'h') ? ' disabled' : '' %>>H</option>
-							<option value="i"<%- _.contains(charsUsed, 'i') ? ' disabled' : '' %>>I</option>
-							<option value="j"<%- _.contains(charsUsed, 'j') ? ' disabled' : '' %>>J</option>
-							<option value="k"<%- _.contains(charsUsed, 'k') ? ' disabled' : '' %>>K</option>
-							<option value="l"<%- _.contains(charsUsed, 'l') ? ' disabled' : '' %>>L</option>
-							<option value="m"<%- _.contains(charsUsed, 'm') ? ' disabled' : '' %>>M</option>
-							<option value="n"<%- _.contains(charsUsed, 'n') ? ' disabled' : '' %>>N</option>
-							<option value="o"<%- _.contains(charsUsed, 'o') ? ' disabled' : '' %>>O</option>
-							<option value="p"<%- _.contains(charsUsed, 'p') ? ' disabled' : '' %>>P</option>
-							<option value="q"<%- _.contains(charsUsed, 'q') ? ' disabled' : '' %>>Q</option>
-							<option value="r"<%- _.contains(charsUsed, 'r') ? ' disabled' : '' %>>R</option>
-							<option value="s"<%- _.contains(charsUsed, 's') ? ' disabled' : '' %>>S</option>
-							<option value="t"<%- _.contains(charsUsed, 't') ? ' disabled' : '' %>>T</option>
-							<option value="u"<%- _.contains(charsUsed, 'u') ? ' disabled' : '' %>>U</option>
-							<option value="v"<%- _.contains(charsUsed, 'v') ? ' disabled' : '' %>>V</option>
-							<option value="w"<%- _.contains(charsUsed, 'w') ? ' disabled' : '' %>>W</option>
-							<option value="x"<%- _.contains(charsUsed, 'x') ? ' disabled' : '' %>>X</option>
-							<option value="y"<%- _.contains(charsUsed, 'y') ? ' disabled' : '' %>>Y</option>
-							<option value="z"<%- _.contains(charsUsed, 'z') ? ' disabled' : '' %>>Z</option>
+							<% _.each('abcdefghijklmnopqrstuvwxyz', function(c) { %>
+								<option value="<%- c %>"<%- _.contains(charsUsed, c) ? ' disabled' : '' %>><%- c.toUpperCase() %></option>
+							<% }) %>
 						</select>
 						<div class="popover">
 							<p>Single unique alphabet for this problem</p>
@@ -274,32 +251,9 @@
 					<label class="control-label col-md-2" for="inpChar">Char</label>
 					<div class="col-md-4">
 						<select name="char" id="inpChar" class="form-control">
-							<option value="a"<%- char == 'a' ? ' selected' : '' %><%- _.contains(charsUsed, 'a') && char != 'a' ? ' disabled' : '' %>>A</option>
-							<option value="b"<%- char == 'b' ? ' selected' : '' %><%- _.contains(charsUsed, 'b') && char != 'b' ? ' disabled' : '' %>>B</option>
-							<option value="c"<%- char == 'c' ? ' selected' : '' %><%- _.contains(charsUsed, 'c') && char != 'c' ? ' disabled' : '' %>>C</option>
-							<option value="d"<%- char == 'd' ? ' selected' : '' %><%- _.contains(charsUsed, 'd') && char != 'd' ? ' disabled' : '' %>>D</option>
-							<option value="e"<%- char == 'e' ? ' selected' : '' %><%- _.contains(charsUsed, 'e') && char != 'e' ? ' disabled' : '' %>>E</option>
-							<option value="f"<%- char == 'f' ? ' selected' : '' %><%- _.contains(charsUsed, 'f') && char != 'f' ? ' disabled' : '' %>>F</option>
-							<option value="g"<%- char == 'g' ? ' selected' : '' %><%- _.contains(charsUsed, 'g') && char != 'g' ? ' disabled' : '' %>>G</option>
-							<option value="h"<%- char == 'h' ? ' selected' : '' %><%- _.contains(charsUsed, 'h') && char != 'h' ? ' disabled' : '' %>>H</option>
-							<option value="i"<%- char == 'i' ? ' selected' : '' %><%- _.contains(charsUsed, 'i') && char != 'i' ? ' disabled' : '' %>>I</option>
-							<option value="j"<%- char == 'j' ? ' selected' : '' %><%- _.contains(charsUsed, 'j') && char != 'j' ? ' disabled' : '' %>>J</option>
-							<option value="k"<%- char == 'k' ? ' selected' : '' %><%- _.contains(charsUsed, 'k') && char != 'k' ? ' disabled' : '' %>>K</option>
-							<option value="l"<%- char == 'l' ? ' selected' : '' %><%- _.contains(charsUsed, 'l') && char != 'l' ? ' disabled' : '' %>>L</option>
-							<option value="m"<%- char == 'm' ? ' selected' : '' %><%- _.contains(charsUsed, 'm') && char != 'm' ? ' disabled' : '' %>>M</option>
-							<option value="n"<%- char == 'n' ? ' selected' : '' %><%- _.contains(charsUsed, 'n') && char != 'n' ? ' disabled' : '' %>>N</option>
-							<option value="o"<%- char == 'o' ? ' selected' : '' %><%- _.contains(charsUsed, 'o') && char != 'o' ? ' disabled' : '' %>>O</option>
-							<option value="p"<%- char == 'p' ? ' selected' : '' %><%- _.contains(charsUsed, 'p') && char != 'p' ? ' disabled' : '' %>>P</option>
-							<option value="q"<%- char == 'q' ? ' selected' : '' %><%- _.contains(charsUsed, 'q') && char != 'q' ? ' disabled' : '' %>>Q</option>
-							<option value="r"<%- char == 'r' ? ' selected' : '' %><%- _.contains(charsUsed, 'r') && char != 'r' ? ' disabled' : '' %>>R</option>
-							<option value="s"<%- char == 's' ? ' selected' : '' %><%- _.contains(charsUsed, 's') && char != 's' ? ' disabled' : '' %>>S</option>
-							<option value="t"<%- char == 't' ? ' selected' : '' %><%- _.contains(charsUsed, 't') && char != 't' ? ' disabled' : '' %>>T</option>
-							<option value="u"<%- char == 'u' ? ' selected' : '' %><%- _.contains(charsUsed, 'u') && char != 'u' ? ' disabled' : '' %>>U</option>
-							<option value="v"<%- char == 'v' ? ' selected' : '' %><%- _.contains(charsUsed, 'v') && char != 'v' ? ' disabled' : '' %>>V</option>
-							<option value="w"<%- char == 'w' ? ' selected' : '' %><%- _.contains(charsUsed, 'w') && char != 'w' ? ' disabled' : '' %>>W</option>
-							<option value="x"<%- char == 'x' ? ' selected' : '' %><%- _.contains(charsUsed, 'x') && char != 'x' ? ' disabled' : '' %>>X</option>
-							<option value="y"<%- char == 'y' ? ' selected' : '' %><%- _.contains(charsUsed, 'y') && char != 'y' ? ' disabled' : '' %>>Y</option>
-							<option value="z"<%- char == 'z' ? ' selected' : '' %><%- _.contains(charsUsed, 'z') && char != 'z' ? ' disabled' : '' %>>Z</option>
+							<% _.each('abcdefghijklmnopqrstuvwxyz', function(c) { %>
+								<option value="<%- c %>"<%- char == c ? ' selected' : '' %><%- _.contains(charsUsed, c) && char != c ? ' disabled' : '' %>><%- c.toUpperCase() %></option>
+							<% }) %>
 						</select>
 						<div class="popover">
 							<p>Single unique alphabet for this problem</p>
