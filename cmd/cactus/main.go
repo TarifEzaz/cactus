@@ -42,17 +42,17 @@ func main() {
 	go func() {
 		addr, ok := cfg.Get("core.addr").(string)
 		if !ok {
-			log.Fatal("missing core.addr in config.tml")
+			log.Fatal("Missing core.addr in config.tml")
 		}
 
-		log.Printf("listening on %s", addr)
+		log.Printf("Listening on %s", addr)
 		err := http.ListenAndServe(addr, nil)
 		catch(err)
 	}()
 
 	beltSize, ok := cfg.Get("belt.size").(int64)
 	if !ok {
-		log.Fatal("missing belt.size in config.tml")
+		log.Fatal("Missing belt.size in config.tml")
 	}
 	for ; beltSize > 0; beltSize-- {
 		go belt.Loop()
@@ -61,7 +61,7 @@ func main() {
 	sigCh := make(chan os.Signal)
 	signal.Notify(sigCh, os.Interrupt)
 
-	log.Printf("received %s; exiting", <-sigCh)
+	log.Printf("Received %s; exiting", <-sigCh)
 }
 
 func catch(err error) {
