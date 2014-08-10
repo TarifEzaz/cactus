@@ -26,7 +26,7 @@ func CreateExecution(w http.ResponseWriter, r *http.Request) {
 	}
 
 	body := struct {
-		SubmissionId int64 `submissionId"`
+		SubmissionId int64 `json:"submissionId"`
 	}{}
 	err := json.NewDecoder(r.Body).Decode(&body)
 	catch(err)
